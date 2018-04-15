@@ -1,24 +1,21 @@
--- CREATE SEQUENCE voyage_id;
-
+-- -- CREATE SEQUENCE voyage_id;
+--
 -- CREATE TABLE voyages (
 --   id SERIAL PRIMARY KEY,
 --   semester VARCHAR(7),
---   year VARCHAR(4),
---   countries INTEGER,
---   ship TEXT
--- )
-
-
--- INSERT INTO voyages VALUES (1, 'Fall', '2012', 14, 'MV Explorer');
-
--- ALTER TABLE voyages ADD COLUMN name TEXT;
+--   year INTEGER CHECK (year > 1962),
+--   tagline VARCHAR,
+--   ports_of_call INTEGER,
+--   ship_id INTEGER REFERENCES ships (id),
+--   academic_sponsor INTEGER REFERENCES academic_sponsors (id)
+-- );
 --
--- UPDATE voyages SET name = 'Atlantic Exploration' WHERE id = 1;
-
 --
--- ALTER TABLE voyages ADD COLUMN sponsor VARCHAR(60);
 --
--- UPDATE voyages SET sponsor = 'University of Virginia' WHERE id = 1;
 
-
-INSERT INTO VOYAGES VALUES (2, 'Summer', '2012', 9, 'MV Explorer', 'North Africa & Europe', 'University of Virginia');
+-- -- INSERT INTO voyages VALUES (1, 'Spring', 2012, 'Central & South America Exploration', 7, 5, 4);
+-- INSERT INTO voyages VALUES (2, 'Summer', 2012, 'North Africa & Europe', 9, 5, 4);
+-- INSERT INTO voyages VALUES (3, 'Fall', 2012, 'Atlantic Exploration', 14, 5, 4);
+-- INSERT INTO voyages VALUES (4, 'Spring', 2013, 'Around the World', 12, 5, 4);
+-- INSERT INTO voyages VALUES (5, 'Summer', 2013, 'Europe and North America', 10, 5, 4);
+-- INSERT INTO voyages VALUES (6, 'Fall', 2013, 'Atlantic Exploration', 15, 5, 4);

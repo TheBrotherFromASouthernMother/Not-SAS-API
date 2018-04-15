@@ -17,8 +17,6 @@ var db = pgp({
 });
 
 
-console.log(db)
-
 
 app.get("/", (req, res) => {
   res.send("Welcome to the Semester at Sea API");
