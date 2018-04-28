@@ -19,3 +19,5 @@
 -- INSERT INTO voyages VALUES (4, 'Spring', 2013, 'Around the World', 12, 5, 4);
 -- INSERT INTO voyages VALUES (5, 'Summer', 2013, 'Europe and North America', 10, 5, 4);
 -- INSERT INTO voyages VALUES (6, 'Fall', 2013, 'Atlantic Exploration', 15, 5, 4);
+
+INSERT INTO voyages VALUES (7, 'Spring', 2014, 'Around the World', 16, 5, 4);

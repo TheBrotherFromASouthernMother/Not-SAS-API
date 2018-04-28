@@ -40,3 +40,7 @@ header {
   display: flex;
   justify-content: center;
 }
+
+.exampleSection {
+  padding-left: 5%;
+}

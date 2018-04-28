@@ -40,10 +40,23 @@
             <p>Created to provide comprehensive data on all Semester at Sea voyages since the year 2012. Simple endpoints provide access to voyage names, semesters, ports of call, academic sponsors, ships, and assoicated images.</p>
           </div>
       </div>
-      <h2>Usage: </h2>
 
-      <h3>Get a single voyage by id</h3>
+
+    <div class="row">
+      <h1>Usage: </h1>
+      <div class="col-12 exampleSection">
+        <h3>Get a single voyage by id</h3>
+        <p> semester-at-sea.me/api/voyages/id </p>
+        <code> {"status":"success",
+          <br> "data": { <br> <span>"id":2, <br> "semester":"Summer",<br> "year":2012, <br> "tagline":"North Africa & Europe", <br> "ports_of_call":9, <br> "ship_id":5,<br> "academic_sponsor":4 </span> <br> } , <br> "message":"retreived voyage"} </code>
+
+      </div>
+    </div>
+
+      <h3>Get all voyages </h3>
       <p> /api/voyages/id </p>
+
+
     </main>
 
 

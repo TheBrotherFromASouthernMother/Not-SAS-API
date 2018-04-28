@@ -13,7 +13,8 @@ const pgp = require('pg-promise')(initOptions);
 
 // var connectionString = 'postgres://localhost:5000/voyages';
 var db = pgp({
-  database: 'semester_at_sea'
+  connectionString: 'postgres://abopubkyhqvlri:5efd420d0574759629ad273727d4443d3b111e25f49a15afb21d5cea7131681a@ec2-54-83-62-190.compute-1.amazonaws.com:5432/ddsjjn648icelb',
+  ssl: true
 });
 
 app.use(express.static('public'))
@@ -27,6 +28,7 @@ function getAllVoyages(req, res, next) {
   db.any("SELECT * FROM voyages").then( data => {
     res.status(200).json({
       status: 'success',
+      results: data.length,
       data: data,
       message: 'retreived all voyages'
     });
@@ -38,7 +40,7 @@ function getAllVoyages(req, res, next) {
 
 function getVoyage(req, res, next) {
   let voyageID = parseInt(req.params.id);
-  db.one(`SELECT * FROM voyages WHERE id = ${voyageID}`).then( data => {
+  db.one(`SELECT * FROM voyages WHERE id = $1`, [voyageID]).then( data => {
     res.status(200).json({
       status: 'success',
       data: data,
