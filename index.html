@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=GFS+Didot" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="container-fluid">
+      <div class="row">
+        <div class="col-4">
+          <img src="./images/SAS-logo-linear-rev.png" alt="SAS logo" class="sas-logo">
+        </div>
+      </div>
+    </header>
+    <div class="jumbotron pageBanner">
+      <h1 class="display-4 CountDown"> Time till next voyage: 134d 18h 50m 2s</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </p>
+    </div>
+    <main class="container-fluid content">
+      <div class="row">
+        <div class="col-12 pageTitle" >
+          <h1> Welcome to the Semester at Sea API</h1>
+        </div>
+        <div class="col-12 pageSubTitle">
+          <h3> The unofficial REST API of Semester at Sea</h3>
+        </div>
+      </div>
+
+      <div class="row introduction">
+          <div class="col-8">
+            <p>Created to provide comprehensive data on all Semester at Sea voyages since the year 2012. Simple endpoints provide access to voyage names, semesters, ports of call, academic sponsors, ships, and assoicated images.</p>
+          </div>
+      </div>
+      <h2>Usage: </h2>
+
+      <h3>Get a single voyage by id</h3>
+      <p> /api/voyages/id </p>
+    </main>
+
+
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      let $countdown = $('.CountDown');
+      let countDownDate = new Date("Sep 9, 2018 15:37:25").getTime();
+      setInterval(function() {
+        let now = new Date().getTime();
+        let timeTillNextVoyage = countDownDate - now;
+
+        let days = Math.floor(timeTillNextVoyage / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeTillNextVoyage % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeTillNextVoyage % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((timeTillNextVoyage % (1000 * 60)) / 1000);
+
+        $countdown.html(`Time till next voyage: ${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+      }, 1000);
+    </script>
+  </body>
+</html>
