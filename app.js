@@ -4,6 +4,8 @@ const app = express();
 
 const promise = require('bluebird');
 
+const port = process.env.PORT || 5000;
+
 const initOptions = {
   // Initialization Options
   promiseLib: promise
@@ -62,6 +64,6 @@ app.get('/api/voyages/:id', (req, res, next) => {
   // res.end();
 });
 
-app.listen(5000, ()=> {
+app.listen(port, ()=> {
   console.log("Server listening on port 5000")
 } )
