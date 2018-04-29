@@ -16,6 +16,9 @@ header {
   margin: 1%;
 }
 
+.sas-logo {
+  width: 35%;
+}
 
 .pageBanner {
   background-image: url('./images/DSC_1539.jpg');
@@ -43,4 +46,24 @@ header {
 
 .exampleSection {
   padding-left: 5%;
+}
+
+.code-snippet {
+  width: 50%;
+  height: 50%;
+  overflow: scroll;
+}
+
+main {
+  /* overflow: hidden; */
+  min-height: 100%;
+  display: block;
+}
+
+.footer {
+  margin-top: 2%;
+  background-color: #0060B2;
+  color: white;
+  display: flex;
+  justify-content: center;
 }

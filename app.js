@@ -19,12 +19,15 @@ var db = pgp({
   ssl: true
 });
 
+module.exports.db = db;
+
 app.use(express.static('public'))
 
 app.get("/", (req, res) => {
   res.sendFile(`${__dirname}/index.html`);
 })
 
+app.use(require("./routes/semester-route.js"));
 
 function getAllVoyages(req, res, next) {
   db.any("SELECT * FROM voyages").then( data => {

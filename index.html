@@ -16,6 +16,7 @@
         </div>
       </div>
     </header>
+
     <div class="jumbotron pageBanner">
       <h1 class="display-4 CountDown"> Time till next voyage: 134d 18h 50m 2s</h1>
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -25,6 +26,7 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
       </p>
     </div>
+
     <main class="container-fluid content">
       <div class="row">
         <div class="col-12 pageTitle" >
@@ -53,11 +55,47 @@
       </div>
     </div>
 
-      <h3>Get all voyages </h3>
-      <p> /api/voyages/id </p>
+    <div class="row">
+      <div class="col-12 exampleSection">
+        <h3>Get all voyages </h3>
+        <p> /api/voyages/id </p>
+        <div class="code-snippet">
+          <code>
+            {"status":"success","results":7,"data":[ <br>
+            {"id":1,"semester":"Spring","year":2012,"tagline":"Central & South America Exploration","ports_of_call":7,"ship_id":5,"academic_sponsor":4}, <br>
+            {"id":2,"semester":"Summer","year":2012,"tagline":"North Africa & Europe","ports_of_call":9,"ship_id":5,"academic_sponsor":4},
+          <br>  {"id":3,"semester":"Fall","year":2012,"tagline":"Atlantic Exploration","ports_of_call":14,"ship_id":5,"academic_sponsor":4},
+          <br>  {"id":4,"semester":"Spring","year":2013,"tagline":"Around the World","ports_of_call":12,"ship_id":5,"academic_sponsor":4},
+          <br>  {"id":5,"semester":"Summer","year":2013,"tagline":"Europe and North America","ports_of_call":10,"ship_id":5,"academic_sponsor":4},
+          <br>  {"id":6,"semester":"Fall","year":2013,"tagline":"Atlantic Exploration","ports_of_call":15,"ship_id":5,"academic_sponsor":4},
+          <br>  {"id":7,"semester":"Spring","year":2014,"tagline":"Around the World","ports_of_call":16,"ship_id":5,"academic_sponsor":4}
+            ],
+            "message":"retreived all voyages"}
+          </code>
+        </div>
 
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-12 exampleSection">
+        <h3>Get voyages by semester and year </h3>
+        <p> /api/voyages/:semester&:year </p>
+        <div class="code-snippet">
+          <code>
+            {"status":"success","data":{"id":12,"semester":"Spring","year":2016,"tagline":"A Voyage Around the World","ports_of_call":15,"ship_id":6,"academic_sponsor":4},"message":"retreived voyage"}
+          </code>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-fluid footer">
+        <h3>Learn more about Semester at Sea @ semesteratsea.org</h3>
+    </div>
     </main>
+
+
 
 
     <script
