@@ -6,6 +6,7 @@ const promise = require('bluebird');
 
 const port = process.env.PORT || 5000;
 
+
 const initOptions = {
   // Initialization Options
   promiseLib: promise
@@ -14,7 +15,7 @@ const initOptions = {
 const pgp = require('pg-promise')(initOptions);
 
 // var connectionString = 'postgres://localhost:5000/voyages';
-var db = pgp({
+const db = pgp({
   connectionString: 'postgres://abopubkyhqvlri:5efd420d0574759629ad273727d4443d3b111e25f49a15afb21d5cea7131681a@ec2-54-83-62-190.compute-1.amazonaws.com:5432/ddsjjn648icelb',
   ssl: true
 });
@@ -23,7 +24,16 @@ module.exports.db = db;
 
 app.use(express.static('public'))
 
-app.get("/", (req, res) => {
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
+
+app.get("/", (req, res, next) => {
   res.sendFile(`${__dirname}/index.html`);
 })
 
@@ -46,7 +56,7 @@ function getAllVoyages(req, res, next) {
 function getVoyage(req, res, next) {
   let voyageID = parseInt(req.params.id);
   db.one(`SELECT * FROM voyages WHERE id = $1`, [voyageID]).then( data => {
-    res.status(200).json({
+    res.json({
       status: 'success',
       data: data,
       message: 'retreived voyage'
@@ -68,5 +78,5 @@ app.get('/api/voyages/:id', (req, res, next) => {
 });
 
 app.listen(port, ()=> {
-  console.log("Server listening on port 5000")
+  console.log(`Server listening on port ${port}`)
 } )
