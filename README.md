@@ -31,3 +31,16 @@ The unofficial API for the world's best study abroad program ⛴🌊🌍 🇿�
 } , 
 "message":"retreived voyage"}
 ```
+
+### Get a voyage by semester and year
+  * URL: semester-at-sea.me/api/voyages/:semester&:year
+  * Example: semest-at-sea.me/ap/voyages/spring&2016
+  
+  ```{"status":"success",
+  "data":{ "id":12,
+  "semester":"Spring","year": 2016,
+  "tagline":"A Voyage Around the World","ports_of_call":15,
+  "ship_id":6,"academic_sponsor":4},
+  "message":"retreived voyage"}
+  ```
+  
