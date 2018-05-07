@@ -22,7 +22,7 @@ const db = pgp({
 
 module.exports.db = db;
 
-app.use(express.static('public'))
+app.use(express.static(`${__dirname}/public`))
 
 
 app.use(function(req, res, next) {
@@ -32,14 +32,9 @@ app.use(function(req, res, next) {
   console.log(res.getHeaders())
   next();
 });
-
-
-
-app.get("/", (req, res, next) => {
-  res.sendFile(`${__dirname}/index.html`);
-})
-
 app.use(require("./routes/semester-route.js"));
+app.use(require('./routes/photo-route.js'));
+
 
 function getAllVoyages(req, res, next) {
   db.any("SELECT * FROM voyages").then( data => {
@@ -69,15 +64,23 @@ function getVoyage(req, res, next) {
   })
 }
 
+
+app.get("/", (req, res, next) => {
+  res.sendFile(`${__dirname}/index.html`);
+})
+
+
 app.get('/api/voyages', (req, res, next) => {
   getAllVoyages(req, res, next);
   // res.end();
 });
 
+
 app.get('/api/voyages/:id', (req, res, next) => {
   getVoyage(req, res, next);
   // res.end();
 });
+
 
 app.listen(port, ()=> {
   console.log(`Server listening on port ${port}`)
