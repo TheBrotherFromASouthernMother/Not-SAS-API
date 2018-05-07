@@ -37,7 +37,7 @@ app.use(require('./routes/photo-route.js'));
 
 
 function getAllVoyages(req, res, next) {
-  db.any("SELECT * FROM voyages").then( data => {
+  db.any("SELECT * FROM voyages INNER JOIN ships ON voyages.ship_id = ships.id").then( data => {
     res.status(200).json({
       status: 'success',
       results: data.length,
