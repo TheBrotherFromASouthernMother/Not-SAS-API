@@ -4,7 +4,7 @@ const db = require('../app.js').db;
 
 function getVoyageBySemesterAndYear(req, res, next) {
   let {semester, year} = req.params;
-  db.one(`Select * FROM voyages WHERE semester = $1 AND year = $2`, [semester, year]).then( data => {
+  db.one(`SELECT * FROM voyages INNER JOIN port ON voyages.semester = port.semester_visited AND voyages.year = port.year_visited WHERE semester = $1 AND year = $2`, [semester, year]).then( data => {
     res.status(200).json({
       status: 'success',
       data: data,
