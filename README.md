@@ -17,7 +17,7 @@ The unofficial API for the world's best study abroad program ⛴🌊🌍 🇿�
  ## Usage:
  ### Get a single voyage by id
   * URL: semester-at-sea.me/api/voyages/id
-  * Example: semest-at-sea.me/ap/voyages/2
+  * Example: semester-at-sea.me/ap/voyages/2
  
  ```{"status":"success", 
 "data": { 
@@ -34,7 +34,7 @@ The unofficial API for the world's best study abroad program ⛴🌊🌍 🇿�
 
 ### Get a voyage by semester and year
   * URL: semester-at-sea.me/api/voyages/:semester&:year
-  * Example: semest-at-sea.me/ap/voyages/spring&2016
+  * Example: semester-at-sea.me/ap/voyages/spring&2016
   
   ```{"status":"success",
   "data":{ "id":12,
